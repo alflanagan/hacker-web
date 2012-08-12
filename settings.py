@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Jamie Duncan', 'jduncan@lemonaidstand.net'),
+    ('', ''),
 )
 
 MANAGERS = ADMINS
@@ -45,7 +45,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/var/www/sites/lemonaidstand/media/'
+MEDIA_ROOT = '/var/www/sites/hackrva/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -56,7 +56,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/sites/lemonaidstand/static/'
+STATIC_ROOT = '/var/www/sites/hackrva/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -101,16 +101,15 @@ MIDDLEWARE_CLASSES = (
 )
 
 
-DEFAULT_FROM_EMAIL = 'info@lemonaidstand.net'
+DEFAULT_FROM_EMAIL = ''
 
+#assuming GMail as an outbound mail agent
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'jduncan@lemonaidstand.net'
-EMAIL_HOST_PASSWORD = 'T3@mst3r'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
-TWITTER_KEY = '1nbmpZfPdpN2ssJmqGxYKg'
-TWITTER_SECRET = '2gcBGGWyo1bMpDZgeSUMfvYz7nry25aT5wcFYeUk'
 LOGIN_URL='/accounts/login'
 LOGOUT_URL='/accounts/logout'
 LOGIN_REDIRECT_URL='/'
@@ -119,8 +118,7 @@ LOGOUT_REDIRECT_URL='/'
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-	'/var/www/sites/lemonaidstand/templates',
-	'/var/www/sites/goalfish/templates',
+	'/var/www/sites/hackrva/templates',
 )
 
 INSTALLED_APPS = (
@@ -143,9 +141,7 @@ ACCOUNT_ACTIVATION_DAYS = 7
 AUTH_PROFILE_MODULE = 'goals.UserProfile'
 
 API_KEY='40d1f384-c339-4ed3-993e-6f1025e2cd35'
-API_EMAIL='jamie.e.duncan@gmail.com'
-
-LEVELS={'Bronze':1000,'Silver':2000,'Gold':3000}
+API_EMAIL=''
 
 DEFAULT_AVATAR_URL = ''.join([MEDIA_URL,'img/avatar_default.jpg'])
 
