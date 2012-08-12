@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'registration',
     'django_messages',
     'notification',
+    'members',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
