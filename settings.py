@@ -45,7 +45,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/var/www/sites/hackrva/media/'
+MEDIA_ROOT = '/var/www/projects/hackrva/ui/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -56,7 +56,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/sites/hackrva/static/'
+STATIC_ROOT = '/var/www/projects/hackrva/ui/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -118,7 +118,7 @@ LOGOUT_REDIRECT_URL='/'
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-	'/var/www/sites/hackrva/templates',
+	'/var/www/projects/hackrva/ui/templates',
 )
 
 INSTALLED_APPS = (
@@ -138,7 +138,7 @@ INSTALLED_APPS = (
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
-AUTH_PROFILE_MODULE = 'members.UserProfile'
+AUTH_PROFILE_MODULE = 'members.models.UserProfile'
 
 API_KEY='40d1f384-c339-4ed3-993e-6f1025e2cd35'
 API_EMAIL=''

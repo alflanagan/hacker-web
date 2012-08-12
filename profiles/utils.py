@@ -10,7 +10,8 @@ from django.conf import settings
 from django.contrib.auth.models import SiteProfileNotAvailable
 from django.db.models import get_model
 from django.contrib.auth.models import User
-from goals.models import ProfileForm, UserProfile
+from members.models import UserProfile
+from members.forms import ProfileForm
 
 def get_profile_model():
     """
@@ -30,7 +31,7 @@ def get_profile_model():
 
 class ProfileForm(forms.ModelForm):
 
-    profile_mod = get_profile_model()
+    #profile_mod = get_profile_model()
 
 
     def __init__(self, *args, **kwargs):

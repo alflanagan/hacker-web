@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from projects.models import Projects
+#from projects.models import Projects
 
 """
 "
@@ -23,7 +23,7 @@ class UserProfile(models.Model):
     account_number = models.CharField(max_length=16, editable=False, help_text="unique number for each member")
     level = models.ForeignKey(MemberLevel, unique_for_month="membership_change_date")
     membership_change_date = models.DateField(auto_now=True, editable=False)
-    projects = ManyToManyField(Projects)
+    #projects = ManyToManyField(Projects)
     rsa_key = models.CharField(null=True, blank=True, help_text="optional RSA Public Key")
     pgp_key = models.CharField(null=True, blank=True, help_text="optional PGP Key")
     
