@@ -1,0 +1,1 @@
+Activate your Goalfish account - you have {{ expiration_days }} days
