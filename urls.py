@@ -16,7 +16,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^profiles/', include('profiles.urls')),
-    url(r'^$', include('goals.urls')),
     url(r'^messages/', include('django_messages.urls')),
     url(r'^notifications/', include('notification.urls')),
 )
