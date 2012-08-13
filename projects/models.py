@@ -21,7 +21,7 @@ class SpaceAllocations(models.Model):
 
 class UserProjects(models.Model):
     '''
-    extending the default User model
+    representing user projects within the space
     '''
     
     name = models.CharField(max_length=32, help_text="a short name for your project")
