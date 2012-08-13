@@ -41,7 +41,7 @@ class UserProfile(models.Model):
     interests = models.ManyToManyField(MemberInterests)
     rsa_key = models.TextField(null=True, blank=True, help_text="optional RSA Public Key")
     pgp_key = models.TextField(null=True, blank=True, help_text="optional PGP Key")
-    avatar = models.ImageField(null=True, blank=True, help_text="optional avatar (jpg,gif,png)")
+    avatar = models.ImageField(null=True, blank=True, upload_to="avatars/", help_text="optional avatar (jpg,gif,png)")
     
     def __unicode__(self):
         return str(self.user)
