@@ -1,0 +1,14 @@
+Copyright 2012, Hack.RVA LLC
+Licensed under GPLv2, spelled out in LICENSE
+
+Purpose: We want to put out an interactive internal/external web application for managing and growing our hackerspace.
+We think that other people may find it useful as well. We hope.
+
+Directory Structure:
+django_messages - canned django_messages module for Django.
+members - home-built class to define members of our hackerspace, etc
+notifications - canned notifications module for Django
+profiles - canned profile editing module for Django
+registration - canned registration module for Django
+spaces - home-built class to define our space as a whole
+ui - web-content directory
