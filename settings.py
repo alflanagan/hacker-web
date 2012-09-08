@@ -1,10 +1,16 @@
-# Django settings for lemonaid project.
+# Django settings for the HackRVA project.
+
+import os
+import django
+
+DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('', ''),
+    ('Jamie Duncan', 'jaime.e.duncan@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -12,7 +18,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/var/www/projects/hackrva/testdb.sql',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(SITE_ROOT, 'testdb.sql')                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -45,7 +51,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/var/www/projects/hackrva/ui/media/'
+MEDIA_ROOT = os.path.join(SITE_ROOT, '/ui/media/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -56,7 +62,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/projects/hackrva/ui/static/'
+STATIC_ROOT = os.path.join(SITE_ROOT, '/ui/static/')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -118,7 +124,7 @@ LOGOUT_REDIRECT_URL='/'
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    '/var/www/projects/hackrva/ui/templates',
+    os.path.join(SITE_ROOT,'/ui/templates')
 )
 
 INSTALLED_APPS = (
