@@ -27,7 +27,7 @@ class MemberLevel(models.Model):
     def __unicode__(self):
         return self.name
 
-class UserProfile(models.Model):
+class MemberProfile(models.Model):
     '''
     extending the default User model
     '''
@@ -42,6 +42,6 @@ class UserProfile(models.Model):
     rsa_key = models.TextField(null=True, blank=True, help_text="optional RSA Public Key")
     pgp_key = models.TextField(null=True, blank=True, help_text="optional PGP Key")
     avatar = models.ImageField(null=True, blank=True, upload_to="avatars/", help_text="optional avatar (jpg,gif,png)")
-    
+
     def __unicode__(self):
         return str(self.user)

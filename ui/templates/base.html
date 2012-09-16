@@ -31,19 +31,17 @@ $(document).ready(function(){
  });
 </script>
 <head>
-<title>Goalfish - {% block title %}{% endblock %}</title>
+<title>HackRVA - {% block title %}{% endblock %}</title>
 {% block extra_head %}{% endblock %}
 </head>
 <body>
 {% load inbox %}
 {% if user.is_authenticated %}
 <div id="menu_bar" class="box sides-vt-2">
-<span id="menu_bar_slug">Learning... Outta' the Bowl.</span>
+<span id="menu_bar_slug">The Richmond, VA Hackerspace</span>
 <span class="menu_text" id="menu_greeting">hello, {{ user.username }}. </span>
-<a href="/goals/{{ user.id }}/"><img class="menu_bar" src="/static/img/glyphicons_074_cup.png" alt="my goals"/></a>
 <a href="/profiles/edit/"><img class="menu_bar" src="/static/img/glyphicons_003_user.png" alt="my profile"/></a>
-<a href="/friends/{{ user.id }}/"><img class="menu_bar" src="/static/img/glyphicons_254_fishes.png" alt="my fishes"/></a>
-<a href="/schools/{{ user.get_profile.school.id }}/"><img class="menu_bar" src="/static/img/glyphicons_340_globe.png" alt="my communities"/></a>
+<a href="/friends/{{ user.id }}/"><img class="menu_bar" src="/static/img/glyphicons_043_group.png" alt="my contacts"/></a>
 <a href="/messages/inbox/"><img class="menu_bar" id="menu_email" src="/static/img/glyphicons_010_envelope.png" alt="my inbox"/></a>
 <span id="email_count" class="menu_text">{% inbox_count %}</span>
 <a href="/accounts/logout/"><img class="menu_bar" src="/static/img/glyphicons_197_remove.png" alt="logout"/></a>
@@ -53,21 +51,19 @@ $(document).ready(function(){
 {% endif %}
 </div>
 <div id="wrapper" class="box sides-vt-2" >
-<div class="box rotated_neg raised" style="padding: 5px; width: 288px; height: 107px; float: left; clear: none; background-color: #cdbfac;"><a href="/"><img src="/static/img/logo.png" /></a></div>
+<div class="box rotated_neg raised" style="padding: 5px; width: 118px; height:
+123px; float: left; clear: none; background-color: #cdbfac;"><a href="/"><img
+src="/static/img/logo.jpg" /></a></div>
 {% if user.is_authenticated %}
 <div id="avatar" class="box raised" style="width: 100px; height: 100px; float: right; clear: none;">
-{% if user.get_profile.avatar %}
-<img src="{{ user.get_profile.avatar.url }}" width=100px height=100px />
-{% else %}
 <img src="/static/img/whitman.jpg"/>
-{% endif %}
 </div>
 {% endif %}
 <div class="box raised" style="margin: 165px auto 30px auto; padding: 10px; background-color: #f5ede3;">
 {% block content %}
 {% endblock %}
 </div>
-<div id="footer">Conecpt and Content &copy; 2012, goalfish.es and lemonaidstand.net. All Rights Reserved.</div>
+<div id="footer">Conecpt and Content &copy; 2012, hackrva.org All Rights Reserved.</div>
 </div>
 <div id="sidebar">
 {% block sidebar %}
