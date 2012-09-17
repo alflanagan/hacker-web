@@ -10,12 +10,13 @@ Current Points: {{ user.get_profile.points }}
 <span class="menu_text">login </span><a href="/accounts/login/"><img src="/static/img/glyphicons_248_asterisk.png" alt="login" style="margin-right: 10px;"/></a>
 <span class="menu_text">register </span><a href="/accounts/register/"><img src="/static/img/glyphicons_006_user_add.png" alt="register"/></a>
 </div>
-<h1>SMART Goals for Life</h1>
-<img src="/static/img/students.png" alt="students" style="clear: none;"/>
+<h1>Richmond's First Hackerspace</h1>
+<img src="/static/img/front_door.jpg" alt="front door" style="margin-bottom: 30px;"/>
 <div style="float: right; clear: none; width: 320px; text-align: center; margin-bottom: 10px;">
-<a href="#smart_goals" class="fancybox"><div class="box raised infoblock" style="border: 1px solid #e1d4c0; padding-top: 5px; padding-bottom: 5px; margin-bottom: 10px;"><h4>What are SMART Goals?</h4></div></a>
-<div class="box raised infoblock" style="border: 1px solid #e1d4c0; padding-top: 5px; padding-bottom: 5px; margin-bottom: 10px;"><h4>How can SMART Goals Help Me?</h4></div>
-<div class="box raised infoblock" style="border: 1px solid #e1d4c0; padding-top: 5px; padding-bottom: 5px;"><h4>What Do I Get?</h4></div>
+<a href="#about" class="fancybox"><div class="box raised infoblock" style="border: 1px solid #e1d4c0; padding-top: 5px; padding-bottom: 5px; margin-bottom: 10px;"><h4>What is hack.rva?</h4></div></a>
+<div class="box raised infoblock" style="border: 1px solid #e1d4c0;
+padding-top: 5px; padding-bottom: 5px; margin-bottom: 10px;"><h4>What's Coming Up?</h4></div>
+<div class="box raised infoblock" style="border: 1px solid #e1d4c0; padding-top: 5px; padding-bottom: 5px;"><h4>How Do I Join?</h4></div>
 </div>
 <div id="checkbox_wrapper" class="box raised" style="border: 1px solid; padding: 10px;">
 <h3>Learning doesn't stop when the bell rings.</h3>
@@ -24,14 +25,18 @@ Current Points: {{ user.get_profile.points }}
 <div class="check_box">Share your accomplishments</div>
 <div class="check_box">Earn GoalFish rewards and show your friends and family</div>
 </div>
-<div id="smart_goals" style="display:none;width:500px;">
-<h4>SMART Goals are how the world operates.</h4>
-<p>SMART is a memory device used to remember the most important criteria to set when creating a new goal. This method is used in schools, companies and other organizations around the world.</p>
-<h4>Specific</h4>
-<h4>Measurable</h4>
-<h4>Attainable</h4>
-<h4>Relavent</h4>
-<h4>Time-bount</h4>
+<div id="about" style="display:none;width:500px;">
+<h4>hack.rva has been in Richmond since 2009.</h4>
+<p>hack.rva is a Richmond-based hacker collective. We like to take things apart,
+put them back together, figure out how they work, and create new things.Public
+hack and project night every Thursday night at 7:30. Come see us!</p>
+<h4>Mission</h4>
+<p>To learn and build. We share tools and knowledge in technology, including
+Arduino, Makerbot, Linux, and the Open Source movement.</p>
+<h4>Description</h4>
+<p>We are located in the same building as The Dairy Bar, at Roseneath and Moore.
+Our door is facing the parking lot in the back of the building, off of Moore
+Street. You can park there too.</p>
 </div>
 {% endif %}
 {% endblock %}
