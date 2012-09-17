@@ -23,7 +23,7 @@ class UserProjects(models.Model):
     '''
     representing user projects within the space
     '''
-    
+
     name = models.CharField(max_length=32, help_text="a short name for your project")
     user = models.ForeignKey(User)
     active = models.BooleanField(default=True, help_text="whether or not you are active within the space currently")
@@ -32,7 +32,7 @@ class UserProjects(models.Model):
     projected_completion_date = models.DateField(help_text="when do you think you will finish this project?")
     actual_completion_date = models.DateField(null=True, blank=True)
     description = models.TextField(help_text="a few words about your project")
-    
+
     def __unicode__(self):
         return "%s-%s" %(self.name, str(self.user))
 
@@ -48,4 +48,4 @@ class UserProjects(models.Model):
         if self.space_requirements:
             return True
         else:
-            return False 
+            return False

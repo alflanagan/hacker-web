@@ -3,7 +3,10 @@
 {% block content %}
 {% load inbox %}
 {% if user.is_authenticated %}
-Current Points: {{ user.get_profile.points }}
+<h3>My Active Projects</h3>
+{% for proj in project_list.all %}
+    <p><a href="/projects/{{proj.id}}/">{{proj.name}}<a/></p>
+{% endfor %}
 
 {% else %}
 <div id="login_pane" style="text-align: right; float: right; clear: none;">
