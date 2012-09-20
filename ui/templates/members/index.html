@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}GoalFish. Learning... Outta' the Bowl. {% endblock %}
+{% block title %}The Richmond, VA Hackerspace {% endblock %}
 {% block content %}
-{% load inbox %}
 {% if user.is_authenticated %}
-<h3>My Active Projects</h3>
-{% for proj in project_list.all %}
-    <p><a href="/projects/{{proj.id}}/">{{proj.name}}<a/></p>
+<div id="proj_list">
+<a href="/projects/new/"><h5>New Project</h5></a>
+<h5>Active Projects</h5>
+<ul>
+{% for proj in project_list %}
+  <li><a href="/projects/{{proj.id}}">{{proj.name}}</a></li>
 {% endfor %}
-
+</ul>
+</div>
 {% else %}
 <div id="login_pane" style="text-align: right; float: right; clear: none;">
 <span class="menu_text">login </span><a href="/accounts/login/"><img src="/static/img/glyphicons_248_asterisk.png" alt="login" style="margin-right: 10px;"/></a>

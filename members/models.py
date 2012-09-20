@@ -16,6 +16,9 @@ class MemberInterests(models.Model):
     name = models.CharField(max_length=32,unique=True,help_text="Name of this interest")
     notes = models.TextField(null=True,blank=True,help_text="Optional Notes")
 
+    def __unicode__(self):
+        return self.name
+
 class MemberLevel(models.Model):
     '''
     used to define member levels for various users
@@ -31,9 +34,7 @@ class MemberProfile(models.Model):
     '''
     extending the default User model
     '''
-
     user = models.OneToOneField(User)
-    account_number = models.CharField(max_length=16, help_text="unique number for each member")
     is_active = models.BooleanField(default=True, help_text="whether or not you are active within the space currently")
     level = models.ForeignKey(MemberLevel, unique_for_month="membership_change_date")
     membership_change_date = models.DateField(auto_now=True, help_text="you can chanage your membership type once each calendar month")

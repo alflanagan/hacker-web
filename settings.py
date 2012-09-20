@@ -124,7 +124,8 @@ LOGOUT_REDIRECT_URL='/'
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    os.path.join(SITE_ROOT,'/ui/templates')
+    #os.path.join(SITE_ROOT,'/ui/templates'),
+    '/var/www/projects/hackrva/ui/templates',
 )
 
 INSTALLED_APPS = (
@@ -146,7 +147,7 @@ INSTALLED_APPS = (
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
-AUTH_PROFILE_MODULE = 'members.models.UserProfile'
+AUTH_PROFILE_MODULE = 'members.MemberProfile'
 
 API_KEY='40d1f384-c339-4ed3-993e-6f1025e2cd35'
 API_EMAIL=''

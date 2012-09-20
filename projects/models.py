@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import date
+from django import forms
 
 """
 "
@@ -44,8 +46,15 @@ class UserProjects(models.Model):
             return False
 
     @property
-    def has_space(self):
-        if self.space_requirements:
+    def is_overdue(self):
+        if date.today() > self.projected_completion_date:
             return True
-        else:
-            return False
+        return False
+
+class UserProjectsForm(forms.ModelForm):
+    class Meta:
+        model = UserProjects
+        exclude = ('start_date','actual_completion_date',)
+        widgets = {
+            'user': forms.HiddenInput,
+        }

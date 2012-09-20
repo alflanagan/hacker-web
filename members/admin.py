@@ -1,14 +1,18 @@
 from django.contrib import admin
-from members.models import UserProfile, MemberLevel
+from members.models import MemberProfile, MemberLevel, MemberInterests
+
+class MemberInterestsAdmin(admin.ModelAdmin):
+
+    save_on_top = True
 
 class MemberLevelAdmin(admin.ModelAdmin):
 
     save_on_top = True
 
-class UserProfileAdmin(admin.ModelAdmin):
+class MemberProfileAdmin(admin.ModelAdmin):
 
     save_on_top = True
-    readonly_fields = ('account_number','membership_change_date')
 
-admin.site.register(UserProfile, UserProfileAdmin)
+admin.site.register(MemberProfile, MemberProfileAdmin)
 admin.site.register(MemberLevel, MemberLevelAdmin)
+admin.site.register(MemberInterests, MemberInterestsAdmin)

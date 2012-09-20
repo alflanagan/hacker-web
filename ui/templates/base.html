@@ -35,13 +35,12 @@ $(document).ready(function(){
 {% block extra_head %}{% endblock %}
 </head>
 <body>
-{% load inbox %}
 {% if user.is_authenticated %}
+{% load inbox %}
 <div id="menu_bar" class="box sides-vt-2">
 <span id="menu_bar_slug">The Richmond, VA Hackerspace</span>
 <span class="menu_text" id="menu_greeting">hello, {{ user.username }}. </span>
 <a href="/profiles/edit/"><img class="menu_bar" src="/static/img/glyphicons_003_user.png" alt="my profile"/></a>
-<a href="/friends/{{ user.id }}/"><img class="menu_bar" src="/static/img/glyphicons_043_group.png" alt="my contacts"/></a>
 <a href="/messages/inbox/"><img class="menu_bar" id="menu_email" src="/static/img/glyphicons_010_envelope.png" alt="my inbox"/></a>
 <span id="email_count" class="menu_text">{% inbox_count %}</span>
 <a href="/accounts/logout/"><img class="menu_bar" src="/static/img/glyphicons_197_remove.png" alt="logout"/></a>

@@ -10,7 +10,7 @@ from django.conf import settings
 from django.contrib.auth.models import SiteProfileNotAvailable
 from django.db.models import get_model
 from django.contrib.auth.models import User
-from members.models import UserProfile
+from members.models import MemberProfile
 from members.forms import ProfileForm
 
 def get_profile_model():
@@ -19,7 +19,7 @@ def get_profile_model():
     model, as defined by the ``AUTH_PROFILE_MODULE`` setting. If that
     setting is missing, raise
     ``django.contrib.auth.models.SiteProfileNotAvailable``.
-    
+
     """
     if (not hasattr(settings, 'AUTH_PROFILE_MODULE')) or \
            (not settings.AUTH_PROFILE_MODULE):
@@ -49,8 +49,8 @@ class ProfileForm(forms.ModelForm):
     last_name = forms.CharField(max_length=32, label="Last Name", help_text='')
 
     class Meta:
-        model = UserProfile
-        exclude = ('user','points','is_student','is_teacher', 'friends','accepted_eula')
+        model = MemberProfile
+        exclude = ()
 
     def save(self, *args, **kwargs):
         """
@@ -73,9 +73,9 @@ def get_profile_form():
     profile model, as defined by the ``AUTH_PROFILE_MODULE``
     setting. If that setting is missing, raise
     ``django.contrib.auth.models.SiteProfileNotAvailable``.
-    
+
     """
     #profile_mod = get_profile_model()
-    
+
     return ProfileForm
 
