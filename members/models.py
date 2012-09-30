@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from projects.models import UserProjects
+from django.db.models.signals import post_save
 
 """
 "
@@ -46,3 +47,10 @@ class MemberProfile(models.Model):
 
     def __unicode__(self):
         return str(self.user)
+
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        level = MemberLevel.objects.get(name="hacker")
+        MemberProfile.objects.create(user=instance, level=level)
+
+post_save.connect(create_user_profile, sender=User)

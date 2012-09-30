@@ -1,1 +1,1 @@
-Activate your Goalfish account - you have {{ expiration_days }} days
+Activate your hack.rva account - you have {{ expiration_days }} days

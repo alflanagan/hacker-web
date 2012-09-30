@@ -112,8 +112,8 @@ DEFAULT_FROM_EMAIL = ''
 #assuming GMail as an outbound mail agent
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'jamie.e.duncan@gmail.com'
+EMAIL_HOST_PASSWORD = 't3@mst3r'
 EMAIL_PORT = 587
 
 LOGIN_URL='/accounts/login'
@@ -143,6 +143,7 @@ INSTALLED_APPS = (
     'notification',
     'members',
     'projects',
+    'workshops',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
