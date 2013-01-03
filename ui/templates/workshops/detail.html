@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Project Details{% endblock %}
+{% block content %}
+{% load inbox %}
+<h3>{{project.name}} | <a href="edit/">Edit</a> | <a href="#delete" class="fancybox">Delete</a></h3>
+<h4>Project Status:
+{% if project.is_active %}
+<em><span style="color: red;">ACTIVE</span></em>
+{% else %}
+<em>INACTIVE</em>
+{% endif %}
+<h4>
+{% if project.is_overdue %}
+<span class="alert">This Project is Currently OVERDUE. Falling Through the cracks?</span>
+{% endif %}
+<p>Date Started: {{project.start_date}}<br/>
+Scheduled Completion Date: {{project.projected_completion_date}}
+{% if project.is_active %}
+</p>
+{% else %}
+</br>
+Actual Completion Date: {{project.actual_completion_date}}</p>
+{% endif %}
+<p>{{project.description}}</p>
+<div id="delete" style="display:none;width:300px;" style="text-align:center;">
+<h4>Are You SURE You Want to Delete This Project?</h4>
+<p>There is no going back...</p>
+<a href="delete/">Yes, I'm Sure</a>
+</div>
+{% endblock %}
