@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     'members',
     'projects',
     'workshops',
+    'spaces',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
