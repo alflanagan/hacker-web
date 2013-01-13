@@ -8,7 +8,7 @@ class HackerSpace(models.Model):
     '''
     name = models.CharField(max_length=64, help_text="the name for your hacker or maker space")
     slogan = models.CharField(max_length=256, blank=True, null=True, help_text="an optional slogan to show up on your pages for your hackerspace")
-    logo = models.ImageField(height_field='logo_height', width_field='logo_width', blank=True, null=True, help_text="an optional logo for your hackerspace")
+    logo = models.ImageField(upload_to='logos/', height_field='logo_height', width_field='logo_width', blank=True, null=True, help_text="an optional logo for your hackerspace")
     address1 = models.CharField(max_length=96, help_text="the address for your hackerspace")
     address2 = models.CharField(max_length=96, null=True, blank=True, help_text="2nd optional address line")
     city = models.CharField(max_length=64, help_text="city")
