@@ -20,3 +20,11 @@ class HackerSpace(models.Model):
 
     class Meta:
         verbose_name = 'Hacker Space'
+
+class Locations(models.Model):
+    '''
+    This model represents areas inside and under the control of the hackerspace
+    '''
+    name = models.CharField(max_length=32, help_text='the name for this location')
+    space = models.ForeignKey(HackerSpace, help_text='the space this location is associated with')
+    notes = models.TextField(null=True, blank=True, help_text='optional notes')
