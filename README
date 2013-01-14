@@ -1,4 +1,4 @@
-Copyright 2012, Hack.RVA LLC
+Copyright 2012,2013 Hack.RVA LLC
 Licensed under GPLv2, spelled out in LICENSE
 
 Purpose: We want to put out an interactive internal/external web application for managing and growing our hackerspace.
@@ -9,4 +9,6 @@ members - custom module to define members of our hackerspace and community
 spaces - custom module to define our space as a whole
 training - custom module to define our safety / tool training efforts
 workshops - custom module to represent our educational workshops
+training - custom module to handle training on our equipment
+equipment - custom module to track major equipment pieces
 ui - web-content directory
