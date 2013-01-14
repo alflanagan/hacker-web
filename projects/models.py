@@ -3,12 +3,6 @@ from django.contrib.auth.models import User
 from datetime import date
 from django import forms
 
-"""
-"
-" Licensed under what is outlined in LICENSE in the application root 
-" Purpose - To define the replationships for a hackerspace user
-"
-"""
 class SpaceAllocations(models.Model):
     '''
     definable space allocations for projects
@@ -20,6 +14,9 @@ class SpaceAllocations(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Space Allocation'
 
 class UserProjects(models.Model):
     '''
@@ -50,6 +47,9 @@ class UserProjects(models.Model):
         if date.today() > self.projected_completion_date:
             return True
         return False
+
+    class Meta:
+        verbose_name = 'User Project'
 
 class UserProjectsForm(forms.ModelForm):
     class Meta:

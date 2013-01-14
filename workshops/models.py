@@ -9,6 +9,10 @@ class WorkshopCategory(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Workshop Category'
+        verbose_name_plural = 'Workshop Categories'
+
 class Workshop(models.Model):
     '''
     'defines workshops that the space can hold
@@ -26,5 +30,3 @@ class Workshop(models.Model):
 
     def __unicode__(self):
         return "%s %s-%s" % (self.category.name, self.number, self.name)
-
-
