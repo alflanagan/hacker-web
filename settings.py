@@ -112,7 +112,7 @@ DEFAULT_FROM_EMAIL = ''
 #assuming GMail as an outbound mail agent
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'jamie.e.duncan@gmail.com'
+EMAIL_HOST_USER = 'root@rvalug.org'
 EMAIL_HOST_PASSWORD = 't3@mst3r'
 EMAIL_PORT = 587
 

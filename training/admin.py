@@ -1,8 +1,8 @@
 from django.contrib import admin
-from training.models import TrainingManual
+from training.models import trainingManual
 
-class TrainingManualAdmin(admin.ModelAdmin):
+class trainingManualAdmin(admin.ModelAdmin):
 
     save_on_top = True
 
-admin.site.register(TrainingManual, TrainingManualAdmin)
+admin.site.register(trainingManual, trainingManualAdmin)

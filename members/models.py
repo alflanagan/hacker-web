@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.models import Group
 from django.db.models.signals import post_save, post_syncdb
 from spaces.models import HackerSpace
 
@@ -34,6 +35,27 @@ class MemberProfile(models.Model):
     rsa_key = models.TextField(null=True, blank=True, help_text="optional RSA Public Key")
     pgp_key = models.TextField(null=True, blank=True, help_text="optional PGP Key")
     avatar = models.ImageField(null=True, blank=True, upload_to="avatars/", help_text="optional avatar (jpg,gif,png)")
+
+    def display_email(self):
+        return self.user.email
+    display_email.short_description = 'email'
+
+    def is_trainer(self):
+        g = Group.objects.get(name='Trainers')
+        if g in self.user.groups.all():
+            return True
+        else:
+            return False
+    is_trainer.short_description = 'trainer'
+    is_trainer.boolean = True
+
+    def is_staff(self):
+        return self.user.is_staff
+    is_staff.short_description = 'member'
+    is_staff.boolean = True
+
+    def get_full_name(self):
+        return str("%s %s") % (self.user.first_name, self.user.last_name)
 
     def __unicode__(self):
         return str(self.user)

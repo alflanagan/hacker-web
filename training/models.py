@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from equipment.models import hackerEquipment
 
-class TrainingManual(models.Model):
+class trainingManual(models.Model):
     '''
     a "training manual" is an information set that represents who is responsible for training new users on equipment as well as normally a document attachement that can be printed for reference. For some of the more straightforward equipment, however, (e.g. drill press), a verbal introduction is all that is required.
     '''
@@ -14,3 +14,5 @@ class TrainingManual(models.Model):
     training_docs = models.FileField(upload_to='manuals/', null=True, blank=True, help_text='optional documentation that can be printed')
     notes = models.TextField(null=True, blank=True, help_text='optional notes')
 
+    def __unicode__(self):
+        return self.name
