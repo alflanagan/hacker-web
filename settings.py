@@ -113,7 +113,7 @@ DEFAULT_FROM_EMAIL = ''
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'root@rvalug.org'
-EMAIL_HOST_PASSWORD = 't3@mst3r'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 LOGIN_URL='/accounts/login'
