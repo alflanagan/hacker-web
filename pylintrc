@@ -65,8 +65,7 @@ confidence=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use"--disable=all --enable=classes
 # --disable=W"
-disable=execfile-builtin,long-builtin,intern-builtin,long-suffix,buffer-builtin,old-raise-syntax,metaclass-assignment,unpacking-in-except,zip-builtin-not-iterating,apply-builtin,old-ne-operator,raising-string,map-builtin-not-iterating,dict-iter-method,suppressed-message,raw_input-builtin,xrange-builtin,standarderror-builtin,range-builtin-not-iterating,backtick,nonzero-method,oct-method,filter-builtin-not-iterating,print-statement,unicode-builtin,file-builtin,next-method-called,import-star-module-level,dict-view-method,old-octal-literal,delslice-method,using-cmp-argument,input-builtin,coerce-builtin,reduce-builtin,parameter-unpacking,old-division,round-builtin,getslice-method,unichr-builtin,no-absolute-import,cmp-method,basestring-builtin,hex-method,useless-suppression,cmp-builtin,indexing-exception,setslice-method,reload-builtin,coerce-method
-
+disable=locally-disabled
 
 [REPORTS]
 
@@ -172,10 +171,10 @@ function-rgx=[a-z_][a-z0-9_]{2,30}$
 function-name-hint=[a-z_][a-z0-9_]{2,30}$
 
 # Regular expression matching correct constant names
-const-rgx=(([A-Z_][A-Z0-9_]*)|(__.*__))$
+const-rgx=(([A-Za-z_][A-Za-z0-9_]*)|(__.*__))$
 
 # Naming hint for constant names
-const-name-hint=(([A-Z_][A-Z0-9_]*)|(__.*__))$
+const-name-hint=(([A-Za-z_][A-Za-z0-9_]*)|(__.*__))$
 
 # Regular expression matching correct class names
 class-rgx=[A-Z_][a-zA-Z0-9]+$
