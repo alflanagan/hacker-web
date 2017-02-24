@@ -1,8 +1,9 @@
+# pylint: disable=missing-docstring
 from django.contrib import admin
-from training.models import trainingManual
+from training.models import TrainingManual
 
-class trainingManualAdmin(admin.ModelAdmin):
+class TrainingManualAdmin(admin.ModelAdmin):
 
     save_on_top = True
 
-admin.site.register(trainingManual, trainingManualAdmin)
+admin.site.register(TrainingManual, TrainingManualAdmin)
