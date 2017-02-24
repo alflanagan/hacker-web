@@ -1,0 +1,4 @@
+pylint
+coverage
+ipython
+pip-tools
