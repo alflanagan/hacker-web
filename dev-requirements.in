@@ -2,3 +2,4 @@ pylint
 coverage
 ipython
 pip-tools
+pylint-django

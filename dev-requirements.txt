@@ -5,7 +5,7 @@
 #    pip-compile --output-file dev-requirements.txt dev-requirements.in
 #
 appdirs==1.4.2            # via setuptools
-astroid==1.4.9            # via pylint
+astroid==1.4.9            # via pylint, pylint-plugin-utils
 click==6.7                # via pip-tools
 coverage==4.3.4
 decorator==4.0.11         # via ipython, traitlets
@@ -22,6 +22,8 @@ pip-tools==1.8.0
 prompt-toolkit==1.0.13    # via ipython
 ptyprocess==0.5.1         # via pexpect
 pygments==2.2.0           # via ipython
+pylint-django==0.7.2
+pylint-plugin-utils==0.2.4  # via pylint-django
 pylint==1.6.5
 pyparsing==2.1.10         # via packaging
 simplegeneric==0.8.1      # via ipython
