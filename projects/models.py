@@ -10,7 +10,7 @@ class SpaceAllocations(models.Model):
     '''
 
     name = models.CharField(max_length=32, help_text="Allocation Name")
-    notes = models.TextField(null=True,blank=True,help_text="optional notes")
+    notes = models.TextField(blank=True,help_text="optional notes")
 
     def __unicode__(self):
         return self.name
@@ -26,7 +26,7 @@ class UserProjects(models.Model):
     name = models.CharField(max_length=32, help_text="a short name for your project")
     user = models.ForeignKey(User)
     active = models.BooleanField(default=True, help_text="whether or not you are active within the space currently")
-    space_requirement = models.ForeignKey(SpaceAllocations, null=True, blank=True)
+    space_requirement = models.ForeignKey(SpaceAllocations, blank=True)
     start_date = models.DateField(auto_now_add=True)
     projected_completion_date = models.DateField(help_text="when do you think you will finish this project?")
     actual_completion_date = models.DateField(null=True, blank=True)

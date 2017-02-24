@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
-from django.db.models.signals import post_save, post_syncdb
 from spaces.models import HackerSpace
 
 """
@@ -31,7 +30,7 @@ class MemberProfile(models.Model):
 
     user = models.OneToOneField(User)
     hackerspace = models.ForeignKey(HackerSpace, blank=True, null=True, help_text="the space the member belongs to")
-    interests = models.ManyToManyField(MemberInterests, blank=True, null=True)
+    interests = models.ManyToManyField(MemberInterests, blank=True)
     rsa_key = models.TextField(null=True, blank=True, help_text="optional RSA Public Key")
     pgp_key = models.TextField(null=True, blank=True, help_text="optional PGP Key")
     avatar = models.ImageField(null=True, blank=True, upload_to="avatars/", help_text="optional avatar (jpg,gif,png)")
@@ -66,6 +65,4 @@ class MemberProfile(models.Model):
 def create_member_profile(sender, instance, created, **kwargs):
     if created:
         MemberProfile.objects.create(user=instance)
-
-post_save.connect(create_member_profile, sender=User)
 

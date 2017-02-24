@@ -26,7 +26,7 @@ class Workshop(models.Model):
     end_time = models.TimeField(help_text="workshop end time")
     date_created = models.DateField(auto_now_add=True)
     description = models.TextField(help_text="description for your workshop")
-    attendees = models.ManyToManyField(User, related_name="user_attendees", help_text="people attendin this workshop", blank=True, null=True)
+    attendees = models.ManyToManyField(User, related_name="user_attendees", help_text="people attending this workshop")
 
     def __unicode__(self):
         return "%s %s-%s" % (self.category.name, self.number, self.name)

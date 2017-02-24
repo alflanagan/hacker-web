@@ -10,7 +10,7 @@ class trainingManual(models.Model):
     name = models.CharField(max_length=32, unique=True, help_text='name for this manual')
     equipment = models.ForeignKey(hackerEquipment, help_text='equipment this manual is for')
     maintainer = models.ForeignKey(User, help_text='person who maintains this manual')
-    training_time = models.IntegerField(max_length=4, help_text='approximate time in minutes training will take to complete')
+    training_time = models.IntegerField(help_text='approximate time in minutes training will take to complete')
     training_docs = models.FileField(upload_to='manuals/', null=True, blank=True, help_text='optional documentation that can be printed')
     notes = models.TextField(null=True, blank=True, help_text='optional notes')
 

@@ -1,0 +1,11 @@
+#compiled Py
+*.pyc
+
+#sqlite files
+*.sql
+
+#vim swap files
+*.swp
+*.swo
+# compile python code
+__pycache__
