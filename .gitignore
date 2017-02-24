@@ -9,3 +9,5 @@
 *.swo
 # compile python code
 __pycache__
+# user-specific settings for WingIDE
+*.wpu
