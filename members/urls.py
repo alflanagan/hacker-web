@@ -1,5 +1,7 @@
-from django.conf.urls.defaults import patterns, include, url
+# pylint: disable=missing-docstring
+from django.conf.urls import url
+from . import views
 
-urlpatterns = patterns('members.views',
-    url(r'^$', 'index'),
-)
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+]
